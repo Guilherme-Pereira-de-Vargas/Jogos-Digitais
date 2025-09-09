@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 58825008}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1835,6 +1835,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   a: 10
   speed: 0
+  jumpforce: 5
+  isground: 0
 --- !u!95 &1441862946
 Animator:
   serializedVersion: 7
@@ -1922,7 +1924,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.875, y: 1}
+    oldSize: {x: 0.8125, y: 1}
     newSize: {x: 0.875, y: 0.9375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
