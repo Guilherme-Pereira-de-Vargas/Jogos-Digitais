@@ -9,12 +9,16 @@ public class Player : MonoBehaviour
     public float jumpForce = 7f;
     public bool isground; //verificar se ta no chão
 
+    public Vector2 PosicaoInicial;
+    public GameManager GameManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
         anim = GetComponent<Animator>();
         rigd = GetComponent<Rigidbody2D>();
+        PosicaoInicial = transform.position;
 
     }
 
@@ -25,6 +29,10 @@ public class Player : MonoBehaviour
         Jump();
     }
 
+    public void RestartPosition()
+    {
+        transform.position = PosicaoInicial;
+    }
     void Move()
     {
         float teclas = Input.GetAxis("Horizontal");
@@ -60,6 +68,12 @@ public class Player : MonoBehaviour
         {
             isground = true;
             Debug.Log("esta no chão");
+        }
+
+        if (collision.gameObject.tag == "lost")
+        {
+            Debug.Log("Morreu");
+            GameObject
         }
     }
 }
