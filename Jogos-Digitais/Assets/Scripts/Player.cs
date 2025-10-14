@@ -73,7 +73,6 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "lost")
         {
             Debug.Log("Morreu");
-            GameObject
         }
     }
 }
