@@ -12,6 +12,6 @@ public class Camera : MonoBehaviour
         newPosition = Vector3.Lerp(transform.position, newPosition, time);
         transform.position = newPosition;
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), transform.position.y, transform.position.y);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), transform.position.y, transform.position.z);
     }
 }

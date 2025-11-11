@@ -19,6 +19,8 @@ public class Coin : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            PlayAudio som = collision.GetComponent<PlayAudio>();
+            som.PlaySFX(som.audioCoins);
             coin++;
             Debug.Log(coin);
             GameManager.AddPoints(10);

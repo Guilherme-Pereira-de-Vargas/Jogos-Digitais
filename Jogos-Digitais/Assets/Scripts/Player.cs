@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
     public Animator anim;
     private Rigidbody2D rigd;
     public float speed; //colocar velocidade no boneco
+    private PlayAudio playeraudio;
 
     public float jumpForce = 7f;
     public bool isground; //verificar se ta no chão
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         rigd = GetComponent<Rigidbody2D>();
         PosicaoInicial = transform.position;
-
+        playeraudio = gameObject.GetComponent<PlayAudio>();
     }
 
     // Update is called once per frame
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour
             rigd.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             anim.SetInteger("transition", 2);
             isground = false;
+            playeraudio.PlaySFX(playeraudio.audioJump);
         }
     }
 
